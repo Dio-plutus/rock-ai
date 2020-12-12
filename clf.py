@@ -3,7 +3,9 @@ import torch
 from PIL import Image
 
 def predict(image_path):
-    resnet = models.resnet101(pretrained=True)
+    #resnet = models.resnet101(pretrained=True)
+
+    resnet = torch.load("densenet_model1")
 
     #https://pytorch.org/docs/stable/torchvision/models.html
     transform = transforms.Compose([
@@ -23,7 +25,7 @@ def predict(image_path):
     resnet.eval()
     out = resnet(batch_t)
 
-    with open('imagenet_classes.txt') as f:
+    with open('rock_classes.txt') as f:
         classes = [line.strip() for line in f.readlines()]
 
     prob = torch.nn.functional.softmax(out, dim=1)[0] * 100
