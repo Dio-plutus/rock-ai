@@ -16,7 +16,7 @@ def predict(image_path):
     )])
 
     img = Image.open(image_path)
-    img = Image.open(img).convert('RGB')
+    #img = Image.open(img).convert('RGB')
     #test_image = Image.open(test_image_name).convert('RGB')
     batch_t = torch.unsqueeze(transform(img), 0)
 
@@ -28,4 +28,4 @@ def predict(image_path):
 
     prob = torch.nn.functional.softmax(out, dim=1)[0] * 100
     _, indices = torch.sort(out, descending=True)
-    return [(classes[idx], prob[idx].item(image)) for idx in indices[0][:5]]
+    return [(classes[idx], prob[idx].item()) for idx in indices[0][:5]]
