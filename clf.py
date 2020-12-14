@@ -5,7 +5,7 @@ from PIL import Image
 def predict(image_path):
     #resnet = models.resnet101(pretrained=True)
 
-    resnet = torch.load("densenet_model1")
+    resnet = torch.load("densenet_model101")
 
     #https://pytorch.org/docs/stable/torchvision/models.html
     transform = transforms.Compose([
