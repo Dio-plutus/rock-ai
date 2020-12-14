@@ -1,0 +1,14 @@
+0, Basalt
+1, Migmatite Gneiss
+2, Pegmatite
+3, Porphyritic Granite
+4, Charnokite
+5, Quartzite
+6, Clayey Siltstone
+7, Ferrigenous Sandstone
+8, Granitic Gneiss
+9, Limestone
+10, Marble
+11, Mica Granite
+12, Sandstone
+13, Shale
